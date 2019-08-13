@@ -15,6 +15,7 @@
 - 각 일자별 경기 기록(승, 패)을 statiz에서 수집
   - https://bit.ly/2YVDriB
 - 기상청에서 지역별 일자별 데이터 수집
+  - https://bit.ly/2KxGLgS
   
 
 ## Reference

@@ -42,10 +42,10 @@ def kbo_crowd(driver, save_dir):
 
         # concatenate df
         crowd_df = pd.concat([crowd_df, df], axis=0)
-        print(df.head())
+        print('{}년 관중 객 데이터 크기: {}'.format(year, df.shape))
         time.sleep(2)
 
-    print('\n관중객 데이터 크기: ',crowd_df.shape)
+    print('2017~2019 관중객 데이터 크기: ', crowd_df.shape)
 
     crowd_df.to_csv(save_dir + '/crowd_df.csv', index=False)
 

@@ -65,9 +65,7 @@ def statiz_record(driver, save_dir):
 
     for year in years:
         for month in months:
-            print('get')
             driver.get(statiz_url.format(month, year))
-            print('after')
             driver.implicitly_wait(10)
 
             # crawling record by day

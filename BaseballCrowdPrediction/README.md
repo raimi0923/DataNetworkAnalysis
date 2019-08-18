@@ -17,6 +17,9 @@
 - 기상청에서 지역별 일자별 데이터 수집
   - https://bit.ly/2KxGLgS
   
+## Anaysis Precess
+- [Page 1: Data Crawling](https://www.notion.so/tootouch/Page-1-2-1-57ca7c027cd34a0db3674a04e7eaf25b)
+- [Page 2: Preprocessing & Analysis](https://www.notion.so/tootouch/Page-2-2-2-2036cdc86b33413b9fd60cbd3d7ea23a)
 
 ## Reference
 1. Park, J., & Park, S. (2017). A Study on Prediction of Attendance in Korean Baseball League Using Artificial Neural Network. 정보처리학회논문지/소프트웨어 및 데이터 공학 제, 6(12), 12.

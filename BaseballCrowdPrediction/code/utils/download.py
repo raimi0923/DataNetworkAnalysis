@@ -42,10 +42,10 @@ def kbo_crowd(driver, save_dir):
 
         # concatenate df
         crowd_df = pd.concat([crowd_df, df], axis=0)
-        print('{}년 관중 객 데이터 크기: {}'.format(year, df.shape))
+        print('{}년 관중 객 데이터 크기: {}'.format(year, df.shape[0]))
         time.sleep(2)
 
-    print('2017~2019 관중객 데이터 크기: ', crowd_df.shape)
+    print('2017~2019 관중객 데이터 크기: ',crowd_df.shape[0])
 
     crowd_df.to_csv(save_dir + '/crowd_df.csv', index=False)
 
@@ -80,7 +80,6 @@ def statiz_record(driver, save_dir):
                     if len(divs) == 4:
                         day = divs[0].text  # define day
                         date = '/'.join([year, month, day])
-                        print('Date : {}'.format(date))
 
                         # check blank
                         check_blank = divs[-1].text.split()
@@ -91,11 +90,12 @@ def statiz_record(driver, save_dir):
                                 spans = a.find_elements_by_tag_name('span')
                                 if len(spans) == 4:
                                     away, away_score, home_score, home = [spans[i].text for i in range(4)]
+                                    print('No: {0:5d} / Date: {1:} / away: {2:4s}/ away_score: {3:2s}/ home_score: {4:2s}/ home: {5:4s}'.format(records.shape[0], date, away, away_score, home_score, home))
                                 else: # 우천취소된 경우
                                     away, home = spans[0].text, spans[-1].text
                                     away_score, home_score = -1, -1 # -1 is missing value
                                 records = np.concatenate((records, [[date, away, away_score, home_score, home]]), axis=0)
-                                print('{} : {}'.format(date, records.shape[0]))
+
                             # 오늘자까지 했으면 중단
                             if date == datetime.today().strftime('%Y/%m/%d'):
                                 break
